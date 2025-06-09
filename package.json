@@ -1,0 +1,16 @@
+{
+    "name": "obsidian-bible-linker",
+    "version": "1.0.0",
+    "description": "Bible linker plugin for Obsidian",
+    "main": "dist/main.js",
+    "scripts": {
+        "dev": "rollup -c --watch",
+        "build": "rollup -c"
+    },
+    "devDependencies": {
+        "obsidian": "^1.4.13",
+        "rollup": "^3.0.0",
+        "rollup-plugin-typescript2": "^0.34.1",
+        "typescript": "^5.0.0"
+    }
+}
