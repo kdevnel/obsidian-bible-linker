@@ -2,7 +2,7 @@ import { App, Editor, MarkdownView, Plugin, Notice, PluginSettingTab, Setting  }
 import { BOOK_MAP, VERSION_MAP } from "./constants"; // Import the book name mapping
 
 interface BibleLinkerSettings {
-	version: string; // e.g. "KJV"
+	version: string; // e.g. "NIV"
 }
 
 const DEFAULT_SETTINGS: BibleLinkerSettings = {
@@ -71,8 +71,49 @@ export default class BibleLinkerPlugin extends Plugin {
         const formattedPath = `${urlSafeBookName}.${verse.replace(":", ".")}`; // Bible.com format
         const versionID = VERSION_MAP[this.settings.version] || VERSION_MAP["NIV"]; // Default to NIV if not found
 		const url = `https://www.bible.com/bible/${versionID}/${formattedPath}`;
-		editor.replaceSelection(`[${selected}](${url})`);
+		editor.replaceSelection(`[${selected} (${this.settings.version})](${url})`);
+
+        // Fetch and display the verse text
+        this.fetchVerse(urlSafeBookName, verse)
+            .then(verseText => {
+                if (verseText && verseText.verses && verseText.verses.length > 0) {
+                    const [chapter, verseNumber] = verse.split(":").map(Number);
+                    const specificVerse = verseText.verses.find( (v: { chapter: number; verse: number; }) => v.chapter === chapter && v.verse === verseNumber );
+
+                    if (!specificVerse) {
+                        new Notice("Verse not found in the fetched data.");
+                        return;
+                    }
+
+                    editor.replaceRange(
+                        `\n> ${specificVerse.text}\n`,
+                        editor.getCursor()
+                    );
+                } else {
+                    new Notice("Verse text not found.");
+                }
+            });
 	}
+
+    async fetchVerse(book: string, chapter: string): Promise<any> {
+        try {
+            // KJV uses a different API endpoint
+            const query = encodeURIComponent(book + "/" + chapter);
+            const url = `https://bible-api.com/data/web/${query}`;
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data || null;
+        } catch (error) {
+            console.error("Error fetching verse:", error);
+            new Notice("Failed to fetch verse. Please check your internet connection.");
+            return null;
+        }
+    }
 }
 
 class BibleLinkerSettingsTab extends PluginSettingTab {
