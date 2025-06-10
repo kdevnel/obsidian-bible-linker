@@ -4,17 +4,14 @@ This plugin converts Bible references (e.g. `John 3:16`) into links to [Bible.co
 
 ## ✨ Features
 
-- Slash command or toolbar action to convert references
+- Command Palette or editor toolbar action to convert references
 - Optional version selection
 - Optional inline preview (KJV/ASV/WEB)
-- Optional API support for modern versions (NIV, ESV, etc)
 
 ## 🔧 Settings
 
 - Choose default version
-- Toggle version selector
 - Toggle inline preview
-- Enter `api.bible` key for extended versions
 
 ## 🛠️ Install
 
