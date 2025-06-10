@@ -1,6 +1,6 @@
 {
-    "id": "bible-linker",
-    "name": "Bible Linker",
+    "id": "bible-reference-linker",
+    "name": "Bible Reference Linker",
     "version": "1.0.1",
     "minAppVersion": "1.0.1",
     "description": "Convert Bible references into Bible.com links with inline verse previews.",
