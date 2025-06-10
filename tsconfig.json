@@ -9,9 +9,15 @@
         "moduleResolution": "Node",
         "esModuleInterop": true,
         "strict": true,
-        "outDir": "dist"
+        "outDir": "dist",
+        "rootDir": "./",
+        "baseUrl": "./",
+        "paths": {
+            "*": ["src/*"]
+        },
     },
     "include": [
+        "src/**/*",
         "main.ts"
     ]
 }
