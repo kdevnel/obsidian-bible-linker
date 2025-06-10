@@ -1,8 +1,9 @@
 {
     "name": "obsidian-bible-linker",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Bible linker plugin for Obsidian",
     "main": "dist/main.js",
+    "type": "module",
     "scripts": {
         "dev": "rollup -c --watch",
         "build": "rollup -c"
