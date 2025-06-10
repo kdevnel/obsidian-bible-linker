@@ -79,3 +79,5 @@ Optional: To avoid copying each time:
 ln -s /path/to/obsidian-bible-linker obsidian-bible-linker
 ```
 
+## Credit
+With thanks to https://bible-api.com/ for providing the API for generating inline previews.
