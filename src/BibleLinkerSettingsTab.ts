@@ -14,7 +14,6 @@ export class BibleLinkerSettingsTab extends PluginSettingTab {
         const { containerEl } = this;
 
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Bible Linker Settings' });
 
         new Setting(containerEl)
             .setName('Preferred Bible Version')

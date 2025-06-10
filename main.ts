@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Plugin, Notice, PluginSettingTab, Setting  } from "obsidian";
+import { Editor, MarkdownView, Plugin, Notice } from "obsidian";
 import { BibleLinkerSettingsTab } from "./src/BibleLinkerSettingsTab"; // Import the settings tab
 import { fetchVerse } from "./src/services/VerseFetcher"; // Import the verse fetching function
 import { parseBibleReference } from "./src/utils/BibleReferenceParser"; // Import the Bible reference parser
