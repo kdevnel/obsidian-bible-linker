@@ -6,5 +6,6 @@
     "description": "Convert Bible references into Bible.com links with inline verse previews.",
     "author": "Kyle Nel",
     "authorUrl": "https://github.com/kdevnel",
-    "main": "main.js"
+    "main": "main.js",
+    "isDesktopOnly": false
 }
