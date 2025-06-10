@@ -1,4 +1,4 @@
-# 📖 Bible Linker Plugin for Obsidian
+# 📖 Bible Reference Linker Plugin for Obsidian
 
 This plugin converts Bible references (e.g. `John 3:16`) into links to [Bible.com](https://www.bible.com), and can optionally add inline verse previews.
 
