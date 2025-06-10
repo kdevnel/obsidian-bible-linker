@@ -1,6 +1,6 @@
 {
     "name": "bible-reference-linker",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Convert Bible references into Bible.com links with inline verse previews.",
     "main": "dist/main.js",
     "type": "module",
