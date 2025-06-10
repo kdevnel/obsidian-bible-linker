@@ -1,8 +1,8 @@
 {
     "id": "bible-reference-linker",
     "name": "Bible Reference Linker",
-    "version": "1.0.1",
-    "minAppVersion": "1.0.1",
+    "version": "1.0.2",
+    "minAppVersion": "1.0.2",
     "description": "Convert Bible references into Bible.com links with inline verse previews.",
     "author": "Kyle Nel",
     "authorUrl": "https://github.com/kdevnel",
